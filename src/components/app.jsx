@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import flats from '../../data/flats';
 import FlatList from './flat_list';
 import FlatMap from './map';
-import GoogleMapReact from 'google-map-react';
 
 class App extends Component {
   constructor(props) {
@@ -10,10 +9,9 @@ class App extends Component {
 
     this.state = {
       flats: flats,
-      selectedFlat: null
+      selectedFlat: 2.341225
     }
   }
-
 
   selectFlat = (id) => {
     this.setState({
@@ -24,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <FlatList selectFlat={this.selectFlat} flats={this.state.flats} />
+        <FlatList selectedFlat={this.state.selectedFlat} selectFlat={this.selectFlat} flats={this.state.flats} />
         <FlatMap />
       </div>
     )

@@ -7,7 +7,7 @@ class FlatList extends Component {
       <div className="flat-list">
         {
           this.props.flats.map((flat) => {
-            return (<Flat name={flat.name} key={flat.lng} imageUrl={flat.imageUrl} price={flat.price} priceCurrency={flat.priceCurrency} />)
+            return (<Flat selectedFlat={this.props.selectedFlat} selectFlat={this.props.selectFlat} name={flat.name} key={flat.lng} imageUrl={flat.imageUrl} price={flat.price} priceCurrency={flat.priceCurrency} lng={flat.lng}/>)
           })
         }
       </div>
